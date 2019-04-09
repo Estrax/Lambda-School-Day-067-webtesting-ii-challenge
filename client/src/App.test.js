@@ -172,18 +172,19 @@ describe('<Dashboard />', () => {
 
 describe('<Display />', () => {
   it('renders the all the required divs', () => {
-    const { getByText } = render(<Display balls={2} strikes={2} />);
+    const { getByText } = render(<Display balls={2} strikes={2} inning={0} inningData={{outs: 0, runs: 0, errors: 0}} basesOccupied={{base1: false, base2: false, base3: false, base4: false}} />);
     getByText(/Balls: 2/i, {selector: 'span.balls'});
     getByText(/Strikes: 2/i, {selector: 'span.strikes'});
   });
 
   it('renders the strikes span correctly', () => {
-    const { getByText } = render(<Display balls={0} strikes={2} />);
+    const { getByText } = render(<Display balls={0} strikes={2} inning={0} inningData={{outs: 0, runs: 0, errors: 0}} basesOccupied={{base1: false, base2: false, base3: false, base4: false}} />);
     getByText(/Strikes: 2/i, {selector: 'span.strikes'});
   });
 
   it('renders the balls span correctly', () => {
-    const { getByText } = render(<Display balls={1} strikes={0} />);
+    const { getByText } = render(<Display balls={1} strikes={0} inning={0} inningData={{outs: 0, runs: 0, errors: 0}} basesOccupied={{base1: false, base2: false, base3: false, base4: false}} />);
     getByText(/Balls: 1/i, {selector: 'span.balls'});
   });
 });
+

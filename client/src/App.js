@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Dashboard from './components/Dashboard';
 import Display from './components/Display';
+import './App.css';
 
 class App extends Component {
     constructor(props) {
@@ -8,6 +9,24 @@ class App extends Component {
         this.state = {
             strikes: 0,
             balls: 0,
+            inning: 0,
+            inningsData: [
+                {outs: 0, runs: 0, errors: 0},
+                {outs: 0, runs: 0, errors: 0},
+                {outs: 0, runs: 0, errors: 0},
+                {outs: 0, runs: 0, errors: 0},
+                {outs: 0, runs: 0, errors: 0},
+                {outs: 0, runs: 0, errors: 0},
+                {outs: 0, runs: 0, errors: 0},
+                {outs: 0, runs: 0, errors: 0},
+                {outs: 0, runs: 0, errors: 0}
+            ],
+            basesOccupied: {
+                base1: false,
+                base2: false,
+                base3: false,
+                base4: false
+            }
         };
 
         this.handleBall = this.handleBall.bind(this);
@@ -59,10 +78,13 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
+            <>
                 <Display
                     balls={this.state.balls}
                     strikes={this.state.strikes}
+                    inning={this.state.inning}
+                    inningData={this.state.inningsData[this.state.inning]}
+                    basesOccupied={this.state.basesOccupied}
                 />
 
                 <Dashboard
@@ -71,7 +93,7 @@ class App extends Component {
                     handleStrike={this.handleStrike}
                     handleHit={this.handleHit}
                 />
-            </div>
+            </>
         );
     }
 }
