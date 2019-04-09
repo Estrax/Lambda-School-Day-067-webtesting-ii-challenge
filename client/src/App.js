@@ -24,8 +24,7 @@ class App extends Component {
             basesOccupied: {
                 base1: false,
                 base2: false,
-                base3: false,
-                base4: false
+                base3: false
             }
         };
 
@@ -71,6 +70,7 @@ class App extends Component {
 
     resetCounters(){
         this.setState({
+            ...this.state,
             strikes: 0,
             balls: 0
         });
