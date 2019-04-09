@@ -16,10 +16,10 @@ const Display = props => {
 
             <div className="basesOccupied">
                 Bases occupied:
-                <span className="base1">Base 1: {props.basesOccupied.base1}</span>
-                <span className="base2">Base 2: {props.basesOccupied.base2}</span>
-                <span className="base3">Base 3: {props.basesOccupied.base3}</span>
-                <span className="base4">Base 4: {props.basesOccupied.base4}</span>
+                <span className="base1">Base 1: {props.basesOccupied.base1.toString()}</span>
+                <span className="base2">Base 2: {props.basesOccupied.base2.toString()}</span>
+                <span className="base3">Base 3: {props.basesOccupied.base3.toString()}</span>
+                <span className="base4">Base 4: {props.basesOccupied.base4.toString()}</span>
             </div>
 
             <span className="balls">
